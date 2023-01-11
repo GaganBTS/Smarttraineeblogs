@@ -4,7 +4,7 @@ def addsubscriber(name,email):
  try:
   client = MailchimpMarketing.Client()
   client.set_config({
-    "api_key": "74176a99950479f3bfa6b22fd51c2cb7-us8",
+    "api_key": "",
     "server": "us8"
   })
 
