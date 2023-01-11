@@ -1,0 +1,518 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Open Sans", "Lato", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+ 
+
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+}
+
+.col-12 {
+ position: absolute;
+
+
+
+
+
+  max-height: 300px !important;
+
+  background-color: white
+}
+
+.op{
+  margin-bottom: 1px;
+}
+.nav-item .nav-link {
+  font-size: large;
+  margin-left: 7px;
+  color: dimgrey !important;
+  transition: color 5s;
+  margin-bottom: 0 !important;
+}
+.nav-item .nav-link:hover {
+  color: #6305dd;
+  font-size: large;
+  font-weight: bold;
+}
+
+.toggle,
+[id^="drop"] {
+  display: none;
+  margin-bottom: 1px;
+}
+/*header search*/
+
+
+/* Giving a background-color to the nav container. */
+nav {
+  margin: 0 0 10% 0 !important;
+  padding: 0;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  /* background-color: #5706c0; */
+  background: transparent;
+  color: white;
+}
+.nav-colored{
+  background-color: #2253aa;
+}
+.sl {
+  background-color: white;
+  background-blend-mode: color;
+}
+.form-control2 {
+  border-radius: 0;
+  padding: 10px;
+  border: none;
+  color: black;
+  float: right;
+}
+/*.form-control2:hover,*/
+/*.form-control2:focus,*/
+/*.form-control2:active{*/
+/*	border: 4px solid #6305dd;*/
+
+/*}*/
+.logo {
+
+  display: inline-block;
+  padding: 0 30px;
+  float: left;
+  font-size: 20px;
+  line-height: 60px;
+  color: white;
+
+}
+.logo h5{
+ 
+  margin-top:6%;
+  display: inline;
+  margin-bottom: 3%;
+  font-family: 'Caveat', cursive;
+ font-size: xx-large;
+}
+.logo #mobile-search{
+  display:none;
+}
+
+.nav-btn {
+  display: inline;
+}
+.logo-2 {
+  display: inline;
+  /*padding: 0 30px;*/
+  float: left;
+  /*font-size:20px;*/
+  /*line-height: 60px;*/
+  color: white;
+}
+
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+  float: right;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  display: block;
+}
+
+/* Positioning the navigation items inline */
+nav ul {
+
+  border: none;
+}
+nav ul li {
+  margin: 0;
+  display: inline-block;
+  float: left;
+  /* background-color: #5706c0; */
+  background: transparent;
+  color: white;
+}
+
+/* Styling the links */
+nav a {
+  font-family:'Roboto', sans-serif;
+  display: block;
+  padding: 14px 20px;
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: color .4s ease-in-out;
+}
+nav ul ul li a{
+  
+  color: #2253aa !important;
+
+}
+/* nav ul li ul li:hover {
+  background: #000000;
+} */
+.dropdown-content #da:hover{
+  color:#38E54D !important;
+  
+}
+.dropbtn:hover{
+  color: #38E54D !important;
+  
+}
+.dropdown:hover{
+  color: #38E54D;
+  
+}
+/* Background color change on Hover */
+nav a:hover {
+  
+  color: #38E54D;
+  
+
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+  display: none;
+  position: absolute;
+  /* has to be the same number as the "line-height" of "nav a" */
+  top: 60px;
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+  display: inherit;
+}
+.menu ul {
+  z-index: 2;
+}
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+  /* background-color: black; */
+  background: #fff;
+   color: #6305dd;
+}
+
+/* Second, Third and more Tiers
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  /* has to be the same number as the "width" of "nav ul ul li" */
+  left: 170px;
+}
+
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after {
+  content: "";
+}
+li > a:only-child:after {
+  content: "";
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  
+  margin-bottom: 2px;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-btn {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  font-family: "Titillium Web", sans-serif;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  margin: 5px;
+
+  transition: 1s;
+}
+
+.social-btn span {
+  width: 0px;
+  overflow: hidden;
+  transition: 1s;
+  text-align: center;
+  margin-left: 2px;
+}
+.social-btn span a {
+  color: dimgray;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  width: 150px;
+  border-radius: 5px;
+}
+
+.social-btn:hover span {
+  padding: 2px;
+  width: max-content;
+}
+#facebook svg{
+  fill: #5706c0;
+}
+#instagram svg{
+  fill: purple;
+}
+#yt svg{
+  fill: crimson;
+}
+#pinterest svg{
+  fill: crimson;
+}
+/* #twitter svg {
+  fill: #1da1f2;
+}
+
+#linkedin svg {
+  fill: #0e76a8;
+}
+
+#github {
+  fill: #333;
+}
+#instagram svg {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+} */
+
+/* Media Queries
+--------------------------------------------- */
+
+@media only screen and (max-width: 768px)  {
+  .sl {
+    background-color: white;
+    background-blend-mode: color;
+  }
+  .form-control2 {
+    width: 100%;
+  }
+  .logo {
+    display: block;
+    padding: 0;
+    width: 50%;
+    float: none;
+    text-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5%;
+
+   
+  }
+  .logo h5{
+    font-size: 2rem;
+    
+ 
+  }
+  
+
+  nav {
+    margin: 0 0 15% 0 !important;
+    position: absolute;
+    z-index: 1;
+  }
+
+  /* Hide the navigation menu by default */
+  /* Also hide the  */
+  .toggle + a,
+  .menu {
+    display: none;
+  }
+
+  /* Stylinf the toggle lable */
+  .toggle {
+    display: none;
+    background: radial-gradient(#6305dd, #390281);
+    padding: 14px 20px;
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+    border: none;
+  }
+
+  .toggle:hover {
+    background-color: #ffffff;
+  }
+
+  /* Display Dropdown when clicked on Parent Lable */
+  [id^="drop"]:hover + ul {
+    display: block;
+  }
+
+  /* Change menu item's width to 100% */
+  nav ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul .toggle,
+  nav ul ul a {
+    padding: 0 40px;
+  }
+
+  nav ul ul ul a {
+    padding: 0 80px;
+  }
+
+  nav a:hover,
+  nav ul ul ul a {
+    background-color: #ffffff;
+  }
+
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a {
+    padding: 14px 20px;
+    color: #fff;
+    font-size: 17px;
+  }
+
+  nav ul li ul li .toggle,
+  nav ul ul a {
+    background-color: #212121;
+  }
+
+  /* Hide Dropdowns by Default */
+  nav ul ul {
+    float: none;
+    position: static;
+    color: #000000;
+    /* has to be the same number as the "line-height" of "nav a" */
+  }
+
+  /* Hide menus on hover */
+  nav ul ul li:hover > ul,
+  nav ul li:hover > ul {
+    display: none;
+  }
+
+  /* Fisrt Tier Dropdown */
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul ul li {
+    position: static;
+    /* has to be the same number as the "width" of "nav ul ul li" */
+  }
+
+}
+
+@media all and (max-width: 330px) {
+  .sl {
+    background-color: white;
+    background-blend-mode: color;
+  }
+  .form-control2 {
+    width: 100%;
+  }
+  nav ul li {
+    display: none;
+    width: 94%;
+  }
+}
+
+.social-links {
+  display: flex;
+}
+
+.social-btn {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  font-family: "Titillium Web", sans-serif;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  background: white;
+  margin: 5px;
+  transition: 1s;
+}
+
+.social-btn span {
+  width: 0px;
+  overflow: hidden;
+  transition: 1s;
+  text-align: center;
+}
+
+.social-btn:hover {
+  width: 150px;
+  border-radius: 5px;
+}
+
+.social-btn:hover span {
+  padding: 2px;
+  width: max-content;
+}
+
+#twitter svg {
+  fill: #1da1f2;
+}
+
+#linkedin svg {
+  fill: #0e76a8;
+}
+
+#github {
+  fill: #333;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px) {
+
+ 
+
+}

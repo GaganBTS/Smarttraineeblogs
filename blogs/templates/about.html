@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    About Us
+{% endblock %}
+{%block meta%}
+ <!-- HTML Meta Tags -->
+ <title>
+  SmarTTraineeBlogs | About Us
+</title>
+<meta name="description" content="SmarTTraineeBlogs | About Us">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="http://smarttraineeblogs.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="
+  About Us
+">
+<meta property="og:description" content="Our Website provides well researched articles regarding Health, Fitness, Nutrition and Supplementation. The articles provided are well researched and will surely help you in achieving your fitness goals.">
+<meta property="og:image" content="http://smarttraineeblogs.com/static/images/smarttrainee.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="smarttraineeblogs.com">
+<meta property="twitter:url" content="http://smarttraineeblogs.com/">
+<meta name="twitter:title" content="
+  About Us
+">
+<meta name="twitter:description" content="Our Website provides well researched articles regarding Health, Fitness, Nutrition and Supplementation. The articles provided are well researched and will surely help you in achieving your fitness goals.">
+<meta name="twitter:image" content="http://smarttraineeblogs.com/static/images/smarttrainee.png">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+{%endblock%}
+{% block css_files %}
+
+
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+{% endblock %}
+{% block content %}
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">About SmarTTrainee</h1>
+      <img id='top-img' src="{% static 'images/smarttrainee.png'%}">
+      <p class="" style="width:100%; font-family: 'Lato', sans-serif;">
+        Our mission is to provide genuine and research based information to fitness enthusiasts. We've seen a lot of false information
+    been circulating around in the wild. So here we are to provide you genuine information regarding health and fitness which will
+surely help you in achieving your fitness goals and equip you with loads of knowledge regarding Health, Fitness, Nutrition, Training and Supplementation</p>
+      <p>
+        <a href="{%url 'contact' %}" class="btn" id='btn6'>Contact Us</a>
+        <a  href='/#emailget' class="btn" id='btn6'>Subscribe to our Newsletter</a>
+      </p>
+    </div>
+    <div class='yt' style="text-align: center !important; align-items: center;">
+        <h1 class='text-center' style='margin-top:2%; margin-bottom:2%;'>Our YouTube Catalogue</h1>
+<iframe width="332" height="590" src="https://www.youtube.com/embed/yWGx-mtB2aQ" title="What is Volume in Training | Workout | Smarttrainee" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="332" height="590" src="https://www.youtube.com/embed/4PHi_bzkL2I" title="BOOST TESTOSTERONE NATURALLY | Muscle Gain | Smarttrainee" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="332" height="590" src="https://www.youtube.com/embed/TPyyKvHDiCc" title="How to LOSE WEIGHT | Weight Loss Tips | Smarttrainee" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    
+   
+    
+  </section>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <h1 class='text-center' style='margin-top:2%; margin-bottom:2%;'>Featured Posts</h1>
+      <div class="row">
+    
+    {%for post in posts%}
+    
+          <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" src='{{post.image}}' data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <h5 class='card-heading' style="color: #2253aa; font-weight: bold;">{{post.title|capfirst}}</h5>
+                <p class="card-text">{{post.excerpt}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button onclick = window.open("{% url  'specific_post' post.slug %}",'_self') type="button" class="featurebtn">View</button>
+                    
+                  </div>
+                  <small class="text-muted">{{post.author|title}}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+    {%endfor%}
+  
+
+        </div>
+      </div>
+    </div>
+ 
+
+     
+
+
+
+
+
+{% endblock %}
