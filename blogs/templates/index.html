@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    SmarTTrainee Blogs | Dare To Be Great
+{% endblock %}
+{%block meta%}    
+
+  <!-- HTML Meta Tags -->
+  <title>
+    SmarTTrainee Blogs | Dare To Be Great
+</title>
+  <meta name="description" content="SmarTTrainee Blogs provides you well researched blogs about Health, Fitness, Nutrition, Diet and Supplementation.">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="http://smarttraineeblogs.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="
+    SmarTTrainee Blogs | Dare To Be Great
+">
+  <meta property="og:description" content="SmarTTrainee Blogs provides you well researched blogs about Health, Fitness, Nutrition, Diet and Supplementation.">
+  <meta property="og:image" content="https://fitnessmadeeasyhealth.files.wordpress.com/2021/03/sm-a-rt-trainee.png?w=768">
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="smarttraineeblogs.com">
+  <meta property="twitter:url" content="http://smarttraineeblogs.com/">
+  <meta name="twitter:title" content="
+    SmarTTrainee Blogs | Dare To Be Great
+">
+  <meta name="twitter:description" content="SmarTTrainee Blogs provides you well researched blogs about Health, Fitness, Nutrition, Diet and Supplementation.">
+  <meta name="twitter:image" content="https://fitnessmadeeasyhealth.files.wordpress.com/2021/03/sm-a-rt-trainee.png?w=768">
+
+  <!-- Meta Tags Generated via https://www.opengraph.xyz -->
+          
+{%endblock%}
+{% block css_files %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'post.css'  %}">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+
+{% endblock %}
+{% block content %}
+
+
+<section class="jumbotron text-center" style=''>
+  <div class="container" style=''>
+    <img id='top-img' src="{% static 'images/smarttrainee.png'%}">
+    <h1 class="jumbotron-heading">SmarTTrainee - Dare to be Great</h1>
+   
+    <p  class="pp">Our Website provides well researched articles regarding Health, Fitness, Nutrition and Supplementation.
+       The articles provided are well researched and will surely help you in achieving your fitness goals</p>
+    <p>
+      <a href="{%url 'all_posts'%}" class="btn btn-primary my-2">View our Posts</a><br>
+      <a href="{%url 'contact'%}" class="btn btn-secondary my-2">Contact Us</a>
+     
+   
+    </p>
+    
+  </div>
+</section>
+<section id="latest-posts" >
+    <h2 style="color: #2253aa; font-size: 2.5rem; font-family: 'Ubuntu', sans-serif;">Our Latest Posts</h2>
+    <ul>
+        {% for post in posts %}
+       {% include 'includes/post.html' %}
+        {% endfor %}
+    </ul>
+<ul>
+    {% for post in posts2 %}
+       {% include 'includes/post.html' %}
+        {% endfor %}
+</ul>
+
+</section>
+
+
+  <div id='emailget' name='emailget'>
+  <form id='emailform' >
+    {%csrf_token%}
+
+    <div class="container5">
+      <h2 style="">Subscribe to our Newsletter</h2>
+      <p>Subscribe to get regular updates about latest posts and to keep up with fitness trends</p>
+    </div>
+  
+    <div class="container5" style="background-color:white">
+      <input id='textinput' type="text" placeholder="Name" name="textinput" required>
+      <input id='emailinput' type="email" placeholder="Email address" name="emailinput" required>
+    
+    </div>
+
+    <div class="container5" id='load1'>
+      <input  id='emailinput2' type="submit" value="Sign me up">
+    </div>
+   
+  </form>
+   <div class="container5 success" style="">
+      <h2>Thank you!!</h2>
+      <h4>You've successfully subscribed. We will shortly send you a confirmation on the email you've provided. </h4>
+      
+    </div>
+</div>
+<section id="provide">
+<h2 class="prvh" style=''>We provide blogs about</h2>
+
+<ul class="provideul">
+
+       <p>
+           <img  class='pimg' style="" alt="" src="{% static 'images/bodybuilder.png' %}">
+          <li><span>Health and fitness</span></li>
+    <li><span>Fat Loss/Weight Gain Tips</span></li>
+    <li><span>Supplementation</span></li>
+    <li><span>Diet Tips and Tricks</span></li>
+    <li><span>Exercise/Training</span></li>
+
+
+
+</p>
+
+</ul>
+
+
+
+</section>
+{% endblock %}
+{% block script %}
+<script>
+
+ $('.success').css({'display':'none'})
+$(document).on('submit','#emailform',function(e){
+        e.preventDefault();
+       
+        $.ajax({
+         
+
+            type:'POST',
+            async:false,
+            url:'{% url "home" %}',
+            data:
+            {
+                name:$("#textinput").val(),
+
+                email:$("#emailinput").val(),
+                csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val(),
+
+
+            },
+            success:function(){
+                  $('#emailinput').val('');
+                  $('#textinput').val('');
+                 
+                  $('.success').css({'display':'block'})
+                $('#emailform').css({'display':'none'})
+                setTimeout(() => {
+                  document.location.reload();
+                }, 4000);
+
+                    }
+            })
+        });
+
+</script>
+    {% endblock %}

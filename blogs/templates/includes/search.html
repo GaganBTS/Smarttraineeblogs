@@ -1,0 +1,14 @@
+<section id="mainsearch">
+    <div id="search">
+
+ <form class="search-form" method="post" action="{% url 'search' %}">
+     {% csrf_token %}
+
+     <input type="search" id="search1" name="search1" placeholder="Search a blog by title..." >
+
+     <button  class="btn2">
+    SEARCH
+  </button>
+ </form>
+</div>
+</section>
